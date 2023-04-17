@@ -17,9 +17,12 @@ int main(int argc, char *argv[]) {
       fd = open(file, O_RDONLY);
       if (fd == -1) {
         warnx(" %s: No such file or directory", file);
+        printf("\n");
+
       }
       while ((br = read(fd, buff, BUFFER)) > 0) {
         write(STDOUT_FILENO, buff, br);
+        printf("\n");
       }
     }
   }
